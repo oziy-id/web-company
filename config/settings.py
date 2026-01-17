@@ -78,22 +78,17 @@ USE_TZ = True
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ==========================================
-# 1. SETTING EMAIL (VERSI PORT 587)
-# ==========================================
-# Port 587 lebih 'ramah' untuk server gratisan dan jarang diblokir
+# settings.py paling bawah
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True   # Wajib True untuk 587
-EMAIL_USE_SSL = False  # Wajib False untuk 587
+EMAIL_PORT = 587          # <--- WAJIB 587 (Jangan 465!)
+EMAIL_USE_TLS = True      # <--- WAJIB True
+EMAIL_USE_SSL = False     # <--- WAJIB False
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
-# ==========================================
-# 2. SETTING CSRF (AGAR TIDAK FORBIDDEN)
-# ==========================================
-# Daftar website yang diizinkan mengirim data (Wajib HTTPS)
+# Izin Website (Biar gak Forbidden)
 CSRF_TRUSTED_ORIGINS = [
     'https://oziy-id-dongcai-garment.hf.space',
 ]
