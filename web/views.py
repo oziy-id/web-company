@@ -1,18 +1,10 @@
-from django.shortcuts import render
-
-def home(request):
-    return render(request, 'home.html')
-
 def career(request):
+    # Cek apakah ada tanda '?success=true' di alamat URL
+    pesan_sukses = None
+    if request.GET.get('success') == 'true':
+        pesan_sukses = "✅ ALHAMDULILLAH! Lamaran Anda berhasil terkirim. Tim HRD kami akan segera memeriksanya."
+
     # Kita tidak perlu logika email di sini lagi
     # Karena HTML form sudah menanganinya langsung via FormSubmit
-    return render(request, 'career.html')
-
-def about(request):
-    return render(request, 'about.html')
-
-def news(request):
-    return render(request, 'news.html')
-
-def faq(request):
-    return render(request, 'faq.html')
+    # Kita cuma kirim pesan_sukses (kalau ada) ke HTML
+    return render(request, 'career.html', {'pesan_sukses': pesan_sukses})
