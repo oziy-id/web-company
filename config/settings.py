@@ -131,3 +131,10 @@ EMAIL_USE_TLS = True
 # Baca dari environment (rahasia)
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+# ... kode paling bawah settings.py ...
+
+# Tambahkan daftar domain yang dipercaya agar tidak kena blokir CSRF
+CSRF_TRUSTED_ORIGINS = [
+    'https://oziy-id-dongcai-garment.hf.space',
+]
+
