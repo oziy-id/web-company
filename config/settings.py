@@ -119,25 +119,16 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ==========================================
-# KONFIGURASI EMAIL (VERSI AMAN & NGEBUT)
+# KONFIGURASI EMAIL (VERSI PORT 587 - LEBIH KOMPATIBEL)
 # ==========================================
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 
-# Gunakan Port 465 dengan SSL (Lebih stabil untuk Hugging Face)
-EMAIL_PORT = 465
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+# KITA UBAH BAGIAN INI:
+EMAIL_PORT = 587          # <--- Pakai 587 lagi
+EMAIL_USE_TLS = True      # <--- Wajib True untuk port 587
+EMAIL_USE_SSL = False     # <--- Wajib False (Matikan SSL)
 
-# Kode Panggilan (JANGAN TULIS EMAIL/PASS ASLI DISINI!)
-# Biarkan kode ini mengambil data dari "Secrets" Hugging Face
+# Kode Panggilan (JANGAN DIUBAH)
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
-
-# ==========================================
-# DAFTAR ALAMAT WEBSITE YANG DIPERCAYA
-# ==========================================
-# Ini PENTING agar tidak kena Error 403 Forbidden saat kirim CV
-CSRF_TRUSTED_ORIGINS = [
-    'https://oziy-id-dongcai-garment.hf.space',
-]
