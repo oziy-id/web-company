@@ -15,7 +15,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Kita ubah agar membaca dari Environment Variable (Brankas)
-# Kalau tidak ada di brankas (saat di run di HP), dia pakai kunci cadangan 'django-insecure...'
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-*mie*ph6)=5rx=z1dyds0hgx)jdf4$9v2oq=2qgf5!9eha^#lp')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -120,12 +119,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ==========================================
-# KONFIGURASI EMAIL (VERSI AMAN)
-# ==========================================
-
-# settings.py (Bagian Paling Bawah)
-
-# ==========================================
 # KONFIGURASI EMAIL (VERSI AMAN & NGEBUT)
 # ==========================================
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -138,6 +131,13 @@ EMAIL_USE_SSL = True
 
 # Kode Panggilan (JANGAN TULIS EMAIL/PASS ASLI DISINI!)
 # Biarkan kode ini mengambil data dari "Secrets" Hugging Face
-import os # Pastikan sudah ada import os di paling atas file, atau tulis lagi disini gpp
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+
+# ==========================================
+# DAFTAR ALAMAT WEBSITE YANG DIPERCAYA
+# ==========================================
+# Ini PENTING agar tidak kena Error 403 Forbidden saat kirim CV
+CSRF_TRUSTED_ORIGINS = [
+    'https://oziy-id-dongcai-garment.hf.space',
+]
