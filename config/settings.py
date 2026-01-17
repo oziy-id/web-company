@@ -1,11 +1,16 @@
+"""
+Django settings for config project.
+VERSI FINAL - PORT 587 (TLS) - ANTI BLOKIR
+"""
+
 import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Kunci Rahasia (Aman, ambil dari brankas server)
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-kunci-darurat-kalau-lokal')
+# Kunci Rahasia
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-kunci-darurat')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -20,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'web',
+    'web', # Aplikasi Mas
 ]
 
 MIDDLEWARE = [
@@ -78,17 +83,25 @@ USE_TZ = True
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# settings.py paling bawah
-
+# ==========================================
+# 1. SETTING EMAIL FINAL (WAJIB PORT 587)
+# ==========================================
+# Jangan diubah-ubah lagi, ini settingan paling stabil untuk Hugging Face
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587          # <--- WAJIB 587 (Jangan 465!)
-EMAIL_USE_TLS = True      # <--- WAJIB True
-EMAIL_USE_SSL = False     # <--- WAJIB False
+
+# PORT 587 = JALUR UMUM (TIDAK DIBLOKIR)
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True   # Wajib TRUE untuk 587
+EMAIL_USE_SSL = False  # Wajib FALSE (Kalau True nanti error 101 lagi)
+
+# Ambil user & password dari Secrets
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
-# Izin Website (Biar gak Forbidden)
+# ==========================================
+# 2. SETTING CSRF (AGAR TIDAK FORBIDDEN)
+# ==========================================
 CSRF_TRUSTED_ORIGINS = [
     'https://oziy-id-dongcai-garment.hf.space',
 ]
