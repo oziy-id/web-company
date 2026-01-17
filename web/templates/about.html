@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %} {% block content %}
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-12 items-center mb-20">
+            <div class="md:w-1/2">
+                <img src="{% static 'foto3.jpg' %}" class="rounded-2xl shadow-2xl w-full hover:scale-105 transition duration-500 object-cover" alt="Gedung PT Dongcai">
+            </div>
+            <div class="md:w-1/2">
+                <h4 class="text-blue-600 font-bold uppercase tracking-wider mb-2">PROFIL PERUSAHAAN</h4>
+                <h1 class="text-4xl font-bold text-slate-900 mb-6">Membangun Reputasi Global dari Indonesia</h1>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Didirikan pada tahun 2010, <strong>PT Dongcai Garment</strong> berawal dari sebuah fasilitas kecil dengan 50 mesin jahit. Kini, kami telah berkembang menjadi salah satu manufaktur swimwear terbesar di kawasan industri terpadu, menempati lahan seluas 5 Hektar.
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Klien kami meliputi ritel besar (Department Store) dan brand olahraga ternama di Amerika Serikat. Kepercayaan ini kami jaga dengan prinsip: <em>Zero Defect & On-Time Delivery.</em>
+                </p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-20">
+            <div class="bg-slate-900 text-white p-10 rounded-2xl relative overflow-hidden group hover:shadow-xl transition">
+                <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl font-bold group-hover:scale-110 transition">V</div>
+                <h3 class="text-2xl font-bold mb-4 relative z-10">Visi Kami</h3>
+                <p class="text-gray-300 relative z-10">
+                    Menjadi produsen pakaian olahraga dan renang kelas dunia yang mengutamakan inovasi teknologi, kesejahteraan karyawan, dan keberlanjutan lingkungan.
+                </p>
+            </div>
+            <div class="bg-blue-600 text-white p-10 rounded-2xl relative overflow-hidden group hover:shadow-xl transition">
+                <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl font-bold group-hover:scale-110 transition">M</div>
+                <h3 class="text-2xl font-bold mb-4 relative z-10">Misi Kami</h3>
+                <ul class="space-y-3 text-blue-100 relative z-10 list-disc pl-5">
+                    <li>Memberikan kualitas produk terbaik melebihi ekspektasi klien.</li>
+                    <li>Menciptakan lingkungan kerja yang aman, inklusif, dan adil.</li>
+                    <li>Mengurangi jejak karbon melalui efisiensi energi di pabrik.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center border-t border-gray-100 pt-16">
+            <p class="text-gray-500 text-sm font-bold tracking-widest uppercase mb-8">Sertifikasi & Kepatuhan</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <span class="text-2xl font-bold text-slate-800 cursor-default">ISO 9001:2015</span>
+                <span class="text-2xl font-bold text-slate-800 cursor-default">WRAP Gold</span>
+                <span class="text-2xl font-bold text-slate-800 cursor-default">Oeko-Tex 100</span>
+                <span class="text-2xl font-bold text-slate-800 cursor-default">Better Cotton</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-slate-900 text-white pt-40 pb-20">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-up">Pusat Bantuan</h1>
+        <p class="text-gray-400 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Temukan jawaban cepat seputar produksi, rekrutmen, dan kerjasama bisnis dengan PT Dongcai Garment.
+        </p>
+    </div>
+</section>
+
+<section class="py-20 bg-white min-h-screen">
+    <div class="container mx-auto px-6 max-w-4xl">
+        
+        <div class="mb-16" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">1</span>
+                <h2 class="text-2xl font-bold text-slate-900">Proses Rekrutmen</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group bg-slate-50 p-6 rounded-xl border border-gray-100 open:bg-white open:shadow-lg transition-all duration-300">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-slate-800">
+                        <span>Apakah proses seleksi dipungut biaya?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 mt-4 leading-relaxed text-sm group-open:animate-fadeIn">
+                        <strong>TIDAK ADA PUNGUTAN BIAYA.</strong> Hati-hati terhadap penipuan. PT Dongcai Garment tidak pernah meminta transfer uang untuk seragam, travel, atau administrasi apapun. Seluruh proses seleksi dilakukan di pabrik resmi kami.
+                    </div>
+                </details>
+
+                <details class="group bg-slate-50 p-6 rounded-xl border border-gray-100 open:bg-white open:shadow-lg transition-all duration-300">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-slate-800">
+                        <span>Berapa lama menunggu panggilan setelah kirim CV?</span>
+                        <span class="transition group-open:rotate-180"><svg fill="none" height="24" stroke="currentColor" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="text-gray-600 mt-4 leading-relaxed text-sm">
+                        Mengingat tingginya volume pelamar, biasanya tim HRD kami membutuhkan waktu <strong>3 - 7 hari kerja</strong> untuk menyortir CV. Hanya pelamar yang memenuhi kualifikasi yang akan dihubungi via WhatsApp/Email resmi.
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="mb-16" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold">2</span>
+                <h2 class="text-2xl font-bold text-slate-900">Seputar Perusahaan</h2>
+            </div>
+            
+            <div class="space-y-4">
+                 <details class="group bg-slate-50 p-6 rounded-xl border border-gray-100 open:bg-white open:shadow-lg transition-all duration-300">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-slate-800">
+                        <span>Di mana lokasi pabrik untuk Walk-in Interview?</span>
+                        <span class="transition group-open:rotate-180"><svg fill="none" height="24" stroke="currentColor" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="text-gray-600 mt-4 leading-relaxed text-sm">
+                        Lokasi kami berada di Kawasan Industri Terpadu (Silakan isi Kota Anda). Pastikan Anda datang sesuai jadwal yang ditentukan di undangan, membawa KTP asli dan berkas lamaran lengkap.
+                    </div>
+                </details>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-10 bg-slate-50 border-t">
+    <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-600 mb-4">Masih ada pertanyaan yang belum terjawab?</p>
+        <a href="mailto:hrd@dongcai.co.id" class="text-blue-700 font-bold border-b-2 border-blue-700 hover:text-blue-900 transition">Kirim Email ke HRD</a>
+    </div>
+</section>
+
+{% endblock %}
