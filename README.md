@@ -1,7 +1,7 @@
 # 🏭 PT Dongcai Garment - Enterprise Fullstack Solutions
 
 <p align="center">
-  <img src="images/logo.jpg" alt="Dongcai Logo" width="160">
+  <img src="Screenshot_2026-01-18-11-30-54-998_com.android.chrome-edit.jpg" alt="Dongcai Logo" width="160">
   <br>
   <ins><b>Digitalizing the Textile Industry with Modern Web Technology</b></ins>
 </p>
